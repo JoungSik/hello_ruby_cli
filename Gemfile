@@ -14,3 +14,5 @@ gem 'thor', '~> 1.3'
 gem 'rubocop', '~> 1.64'
 
 gem 'rubocop-rake', '~> 0.6.0'
+
+gem 'tty-prompt', '~> 0.23.1'

@@ -2,3 +2,6 @@ require: rubocop-rake
 
 AllCops:
   SuggestExtensions: false
+
+Metrics/MethodLength:
+  Max: 20

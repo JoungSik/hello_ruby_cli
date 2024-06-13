@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'hello_ruby_cli'
+require 'tty/prompt'
+require 'tty/prompt/test'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

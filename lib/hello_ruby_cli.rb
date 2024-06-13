@@ -1,21 +1,20 @@
 # frozen_string_literal: true
 
 require_relative 'hello_ruby_cli/version'
+
+require 'hello_ruby_cli/company'
 require 'thor'
+require 'tty-prompt'
 
 module HelloRubyCli
-  class Error < StandardError; end
-
   # Main Cli Class
   class CLI < Thor
-    desc 'hello [name]', 'say my name'
+    desc 'career_history [company_name]', 'showing career history'
 
-    def hello(name)
-      if name == 'joungsik'
-        puts 'you are goddamn right'
-      else
-        puts 'say my name'
-      end
+    def career_history
+      prompt = TTY::Prompt.new
+      company_name = prompt.select('Choose company?', Company::COMPANIES)
+      puts company_name.empty? ? 'no company name' : Company.new(company_name).show
     end
   end
 end
