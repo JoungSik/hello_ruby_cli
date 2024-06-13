@@ -27,11 +27,7 @@ jobs:
           bundle install
       - name: Build gem
         run: gem build hello_ruby_cli.gemspec
-      - name: Publish to RubyGems
-        env:
-          RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
-        run: |
-          echo "---" > ~/.gem/credentials
-          echo ":rubygems_api_key: $RUBYGEMS_API_KEY" >> ~/.gem/credentials
-          chmod 0600 ~/.gem/credentials
-          gem push hello_ruby_cli-*.gem --verbose
+      - name: Build and publish to RubyGems
+        uses: actionshub/publish-gem-to-rubygems@main
+        with:
+          token: ${{ secrets.RUBYGEMS_API_KEY }}
