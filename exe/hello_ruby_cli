@@ -2,3 +2,5 @@
 # frozen_string_literal: true
 
 require 'hello_ruby_cli'
+
+HelloRubyCli::CLI.start(ARGV)
