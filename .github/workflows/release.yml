@@ -30,4 +30,4 @@ jobs:
       - name: Publish to RubyGems
         env:
           RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
-        run: gem push hello_ruby_cli-*.gem
+        run: gem push hello_ruby_cli-*.gem --verbose
